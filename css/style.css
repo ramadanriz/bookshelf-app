@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #88abff;
+    overflow-x: hidden;
+}
+
+.wrapper{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 32%);
+    gap: 15px;
+}
+
+.wrapper li{
+    background: white;
+    list-style: none;
+    border-radius: 5px;
+    margin-top: 60px;
+    height: 250px;
+}
+
+/* add a book */
+.add-box,
+.add-box .icon,
+.bottom-content,
+.popup,
+header,
+.book-shelf .book-list .bottom-content .menu li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-box{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-box .icon{
+    height: 78px;
+    width: 78px;
+    color: #88abff;
+    font-size: 40px;
+    border-radius: 50%;
+    border: 2px dashed #88abff;
+    justify-content: center;
+}
+
+.add-box p,
+.book-shelf h2{
+    color: #88abff;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+/* search book */
+.search-box{
+    position: absolute;
+}
+
+.search-box input{
+    font-size: 15px;
+    height: 40px;
+}
+
+.search-box input[type=text]{
+    background: white;
+    width: 300px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+}
+
+.search-box input[type=submit]{
+    border-radius: 0 25px 25px 0;
+    width: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #555;
+    color: white;
+    position: relative;
+    left: -5px;
+    transition: .5s;
+}
+
+.search-box input[type=submit]:hover{
+    background: #111;
+}
+
+/* add book popup */
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,.4);
+}
+
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 400px;
+    width: 100%;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+.popup-box,
+.popup-box .popup{
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+}
+
+.popup-box.show, 
+.popup-box.show .popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup .content{
+    width: calc(100% - 15px);
+    background: white;
+    border-radius: 5px;
+}
+
+.popup .content header{
+    padding: 15px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.popup .content header p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.popup .content header i{
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.popup .content form{
+    margin: 15px 25px 35px;
+}
+
+.popup .content form .row{
+    margin-bottom: 20px;
+}
+
+.popup .content form .row label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.popup .content form input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    font-size: 17px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+.popup .content form .read{
+    display: flex;
+    align-items: center;
+}
+
+.popup .content form .read label{
+    margin-bottom: 0;
+}
+
+.popup .content form .read input{
+    width: 5%;
+    margin-right: 10px;
+}
+
+.popup .content form button{
+    width: 100%;   
+    height: 50px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    background: #6a93f8;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.popup .content form button:hover{
+    background: #2a66f1;
+}
+
+/* bookshelf */
+.book-shelf {
+    height: 500px!important;
+    overflow: auto;
+}
+
+.book-shelf h2 {
+    margin-top: 0;
+    padding: 15px 20px 10px 20px;
+    background: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.book-shelf .list-item{
+    padding: 15px 20px 20px;
+}
+
+.book-shelf .book-list {
+    margin-top: 10px;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    padding: 16px ;
+    border-radius: 4px;
+}
+
+.book-shelf .book-list .details{
+    padding-bottom: 10px;
+}
+
+.book-shelf .book-list .details h3{
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+}
+
+.book-shelf .book-list .details p{
+    display: block;
+    margin-top: 5px;
+    color: #575757;
+    font-size: 16px;
+}
+
+.book-shelf .book-list .details span{
+    color: #6d6d6d;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.book-shelf .book-list .bottom-content{
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.book-shelf .book-list .bottom-content i{
+    color: #6d6d6d;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.book-shelf .book-list .bottom-content .menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.book-shelf .book-list .bottom-content .menu li{
+    height: 25px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .5s ease;
+}
+
+.book-shelf .book-list .bottom-content .menu li:hover{
+    background: #f5f5f5;
+}
+
+.book-shelf .book-list .bottom-content .menu li i{
+    padding-right: 8px;
+}
+
+.book-shelf::-webkit-scrollbar {
+    display: none;
+}
+  
+.book-shelf {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+@media only screen and (max-width: 900px){
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrapper li{
+        margin-top: 100px;
+    }
+}

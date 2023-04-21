@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookshelf App</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <li class="add-box">
+            <div class="icon"><i class="uil uil-plus"></i></div>
+            <p>Add new book</p>
+        </li>
+
+        <div class="search-box">
+            <form action="#" id="searchBook">
+                <input type="text" id="searchBookTitle" name="" placeholder="Search for Books by Title">
+                <input type="submit" name="" id="searchBookButton" value="Search">
+            </form>
+        </div>
+
+        <li class="book-shelf" id="incompleteBookshelfList">
+            <h2>Unread</h2>
+            <div class="list-item" id="books">
+                
+            </div>
+        </li>
+
+        <li class="book-shelf" id="completeBookshelfList">
+            <h2>Already Read</h2>
+            <div class="list-item" id="completed-books">
+            </div>
+        </li>
+    </div>
+
+    <div class="popup-box">
+        <div class="popup">
+            <div class="content">
+                <header>
+                    <p>Add a new Book</p>
+                    <i class="uil uil-times"></i>
+                </header>
+                <form action="#" id="inputBook">
+                    <div class="row title">
+                        <label for="inputBookTitle">Title</label>
+                        <input id="inputBookTitle" type="text" required>
+                    </div>
+                    <div class="row author">
+                        <label for="inputBookAuthor">Author</label>
+                        <input id="inputBookAuthor" type="text" required>
+                    </div>
+                    <div class="row year">
+                        <label for="inputBookYear">Year</label>
+                        <input id="inputBookYear" type="number" required>
+                    </div>
+                    <div class="row read">
+                        <input id="inputBookIsComplete" type="checkbox">
+                        <label for="inputBookIsComplete">Already Read</label>
+                    </div>
+                    <button type="submit">Add book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+</body>
+</html>
